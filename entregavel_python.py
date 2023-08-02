@@ -5,15 +5,16 @@ class Auv():
         self.sensores = sensores
         self.ano = ano
         lista.append(self)
+    def exibeAUV(self):
+        print(f'Nome: {self.nome}, Número de Thursters: {self.nthursters}, Sensores: {self.sensores}, Ano de Construção: {self.ano}')
+    def exibeAUVs(lista):
+        for auv in lista:
+            auv.exibeAUV()
 
-def exibeAUVs(Au):
-    for a in Au:
-        print(f'Nome: {a.nome}, Número de Thursters: {a.nthursters}, Sensores: {exibeSensores(a.sensores)}, Ano de Construção: {a.ano}')
-
-def exibeSensores(listaS):
-    for sensor in listaS:
-        print(sensor)
 listaAUVS = []
-sensoresLua = ["Ultrassonico", "Infravermelho"]
-Lua = Auv("Lua", 6, sensoresLua, 2020, listaAUVS)
-exibeAUVs(listaAUVS)
+#sensoresLua = ["Ultrassonico", "Infravermelho"]
+#sensoresBr = ["LDR", "Pressao"]
+Lua = Auv("Lua", 8, ["Ultrassonico", "Infravermelho"], 2022, listaAUVS)
+BrHue = Auv("BrHue", 6, ["LDR", "Pressao"], 2020, listaAUVS)
+Lua.exibeAUV()
+Auv.exibeAUVs(listaAUVS)
