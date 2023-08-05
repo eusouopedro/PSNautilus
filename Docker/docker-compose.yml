@@ -1,13 +1,15 @@
-version: "3"
-
+version: '3'
 services:
-  ubuntu_ps:
-    container_name: "ubuntu_ps"
-    image: 4d80be73be8a
+
+  auv_ws:
+    container_name: auv_ws
+    image: ghcr.io/ufrj-nautilus/auv_ws:master
     privileged: true
+    pull_policy: always
     environment:
-      - DISPLAY=${DISPLAY}
+      - DISPLAY=${DISPLAY} 
     volumes:
+      - /home/pedro/src:/root/catkin_ws/src
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /etc/localtime:/etc/localtime
     network_mode: host
