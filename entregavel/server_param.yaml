@@ -1,0 +1,5 @@
+debug_mode: false
+
+orbitas:
+  r_planeta: 4
+  r_satelite: 1

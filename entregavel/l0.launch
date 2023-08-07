@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+    <rosparam file="$(find entregavel)/server_param.yaml" command="load" />
+    
+    <node pkg="entregavel" type="broadcaster_e.py" name="tf_broadcaster"/>
+    <node pkg="entregavel" type="listener_e.py" name="tf_listener" />
+
+
+</launch>
